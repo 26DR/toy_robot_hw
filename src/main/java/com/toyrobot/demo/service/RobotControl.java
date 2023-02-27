@@ -1,4 +1,4 @@
-package com.toyrobot.demo.service.commands;
+package com.toyrobot.demo.service;
 
 import com.toyrobot.demo.exception.ToyRobotException;
 import com.toyrobot.demo.model.ToyRobot;

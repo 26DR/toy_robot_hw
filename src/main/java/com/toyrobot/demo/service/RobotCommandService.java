@@ -6,7 +6,6 @@ import com.toyrobot.demo.repository.ToyRobotRepository;
 import com.toyrobot.demo.service.commands.LeftCommand;
 import com.toyrobot.demo.service.commands.MoveCommand;
 import com.toyrobot.demo.service.commands.RightCommand;
-import com.toyrobot.demo.service.commands.RobotControl;
 import com.toyrobot.demo.service.enums.Commands;
 import com.toyrobot.demo.service.enums.FacingDirection;
 import lombok.AllArgsConstructor;

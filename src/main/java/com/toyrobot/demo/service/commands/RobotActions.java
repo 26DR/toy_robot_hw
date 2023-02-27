@@ -1,6 +1,7 @@
 package com.toyrobot.demo.service.commands;
 
 import com.toyrobot.demo.model.ToyRobot;
+import com.toyrobot.demo.service.RobotControl;
 import com.toyrobot.demo.service.enums.FacingDirection;
 import org.springframework.stereotype.Service;
 
