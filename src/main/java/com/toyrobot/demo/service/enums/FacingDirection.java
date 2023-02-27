@@ -12,7 +12,7 @@ public enum FacingDirection {
     SOUTH (3),
     WEST (4);
 
-    private int directionValue;
+    private final int directionValue;
 
     FacingDirection(int directionValue){
         this.directionValue = directionValue;

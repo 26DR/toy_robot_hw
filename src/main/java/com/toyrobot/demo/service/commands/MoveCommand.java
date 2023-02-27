@@ -6,12 +6,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class ReportCommand extends Command<String> {
+public class MoveCommand extends Command<Boolean> {
 
     RobotActions robotActions;
 
     @Override
-    public String executeCommand(ToyRobot toyRobot) {
-        return robotActions.robotReport(toyRobot);
+    public Boolean executeCommand(ToyRobot toyRobot) {
+        return robotActions.moveRobot(toyRobot);
     }
 }
