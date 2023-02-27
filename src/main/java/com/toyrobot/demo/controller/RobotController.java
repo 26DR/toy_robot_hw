@@ -3,6 +3,7 @@ package com.toyrobot.demo.controller;
 import com.toyrobot.demo.model.ToyRobot;
 import com.toyrobot.demo.service.RobotCommandService;
 import com.toyrobot.demo.service.enums.Commands;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,8 @@ public class RobotController {
 
     private final RobotCommandService robotCommandService;
 
+    @Operation(summary = "Places robot on the tabletop",
+            description = "Places robot on a square tabletop (5x5) grid.")
     @PostMapping(path = "/robot/place")
     @ResponseBody
     public ResponseEntity<ToyRobot> initiateRobot(@RequestBody ToyRobot toyRobot) {
@@ -36,6 +39,8 @@ public class RobotController {
         }
     }
 
+    @Operation(summary = "Control robot by giving it commands",
+            description = "Give robot commands such as LEFT, RIGHT or MOVE to control the robot")
     @PostMapping(path = "/robot/{id}/{command}")
     @ResponseBody
     public ResponseEntity<ToyRobot> controlRobot(@PathVariable Long id, @PathVariable("command") Commands command) {
@@ -49,6 +54,8 @@ public class RobotController {
         }
     }
 
+    @Operation(summary = "Retrieves robot coordinates",
+            description = "Retrieves robot current coordinates by a robot ID")
     @GetMapping(path = "/robot/{id}")
     @ResponseBody
     public ResponseEntity<ToyRobot> getRobotReport(@PathVariable Long id) {
