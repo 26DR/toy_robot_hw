@@ -10,15 +10,12 @@ public abstract class RobotControl {
     public static final int MAX_POSITION = 4;
 
     public static ToyRobot placeANewRobot(int xPos, int yPos, FacingDirection facingDirection) {
-        if (isPlacementNotRestricted(xPos, yPos)) {
-            return ToyRobot.builder()
-                    .xPos(xPos)
-                    .yPos(yPos)
-                    .facingDirection(facingDirection)
-                    .build();
-        } else {
-            throw new ToyRobotException("Robot not placed due to placement restrictions");
-        }
+        validatePosition(xPos, yPos);
+        return ToyRobot.builder()
+                .xPos(xPos)
+                .yPos(yPos)
+                .facingDirection(facingDirection)
+                .build();
     }
 
     public static void moveRobot(ToyRobot toyRobot) {
@@ -27,28 +24,26 @@ public abstract class RobotControl {
 
         switch (toyRobot.getFacingDirection()) {
             case NORTH:
-                yPos = (toyRobot.getYPos() + 1);
+                yPos++;
                 break;
             case EAST:
-                xPos = (toyRobot.getXPos() + 1);
+                xPos++;
                 break;
             case SOUTH:
-                yPos = (toyRobot.getYPos() - 1);
+                yPos--;
                 break;
             case WEST:
-                xPos = (toyRobot.getXPos() - 1);
+                xPos--;
         }
 
-        if (isPlacementNotRestricted(xPos, yPos)) {
-            toyRobot.setXPos(xPos);
-            toyRobot.setYPos(yPos);
-            return;
-        }
-
-        throw new ToyRobotException("Robot not moved due to placement restrictions");
+        validatePosition(xPos, yPos);
+        toyRobot.setXPos(xPos);
+        toyRobot.setYPos(yPos);
     }
 
-    private static boolean isPlacementNotRestricted(int xPos, int yPos) {
-        return xPos >= MIN_POSITION && xPos <= MAX_POSITION && yPos >= MIN_POSITION && yPos <= MAX_POSITION;
+    private static void validatePosition(int xPos, int yPos) {
+        if (xPos < MIN_POSITION || xPos > MAX_POSITION || yPos < MIN_POSITION || yPos > MAX_POSITION) {
+            throw new ToyRobotException("Robot not placed/moved due to placement restrictions");
+        }
     }
 }
