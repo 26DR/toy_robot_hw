@@ -6,6 +6,4 @@
 
 Use the provided Rest APIs endpoints (http://localhost:8080/swagger-ui/index.html#/robot-controller) to create, change direction or move the robot. Start by creating the robot and then use its ID in other endpoints for further commands.
 
-
-
-![image](https://user-images.githubusercontent.com/21066026/221660632-80aca773-2f25-4ad6-8c4e-c22dceaab38a.png)
+![image](https://user-images.githubusercontent.com/21066026/222265543-f29c46db-aaf4-4680-8724-1781c46b65d3.png)
