@@ -1,17 +1,18 @@
 package com.toyrobot.demo.service.commands;
 
 import com.toyrobot.demo.model.ToyRobot;
+import com.toyrobot.demo.service.ToyRobotActionsService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class LeftCommand extends Command<Boolean>{
+public class LeftCommand extends Command {
 
-    RobotActions robotActions;
+    ToyRobotActionsService toyRobotActionsService;
 
     @Override
-    public Boolean executeCommand(ToyRobot toyRobot) {
-        return robotActions.turnRobotLeft(toyRobot);
+    public void executeCommand(ToyRobot toyRobot) {
+        toyRobotActionsService.turnRobotLeft(toyRobot);
     }
 }
