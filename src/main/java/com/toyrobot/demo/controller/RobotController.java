@@ -1,6 +1,6 @@
 package com.toyrobot.demo.controller;
 
-import com.toyrobot.demo.model.ToyRobot;
+import com.toyrobot.demo.domain.ToyRobot;
 import com.toyrobot.demo.service.ToyRobotActionsService;
 import com.toyrobot.demo.service.ToyRobotCommandService;
 import com.toyrobot.demo.service.enums.Commands;
@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @Slf4j
 @RestController
 @AllArgsConstructor
@@ -29,7 +31,7 @@ public class RobotController {
             description = "Create and place robot on a square tabletop (5x5) grid.")
     @PostMapping
     @ResponseBody
-    public ResponseEntity<Long> initiateRobot(@RequestBody ToyRobot toyRobot) {
+    public ResponseEntity<Long> initiateRobot(@Valid @RequestBody ToyRobot toyRobot) {
         return ResponseEntity.ok(toyRobotActionsService.placeRobot(toyRobot.getXPos(), toyRobot.getYPos(),
                 toyRobot.getFacingDirection()));
     }

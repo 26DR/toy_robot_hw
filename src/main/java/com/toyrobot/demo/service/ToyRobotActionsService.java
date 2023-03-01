@@ -1,7 +1,7 @@
 package com.toyrobot.demo.service;
 
+import com.toyrobot.demo.domain.ToyRobot;
 import com.toyrobot.demo.exception.ToyRobotException;
-import com.toyrobot.demo.model.ToyRobot;
 import com.toyrobot.demo.service.enums.FacingDirection;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

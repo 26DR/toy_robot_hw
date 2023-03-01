@@ -1,6 +1,6 @@
 package com.toyrobot.demo.repository;
 
-import com.toyrobot.demo.model.ToyRobot;
+import com.toyrobot.demo.domain.ToyRobot;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

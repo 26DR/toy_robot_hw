@@ -1,4 +1,4 @@
-package com.toyrobot.demo.model;
+package com.toyrobot.demo.domain;
 
 import com.toyrobot.demo.service.enums.FacingDirection;
 import lombok.AllArgsConstructor;

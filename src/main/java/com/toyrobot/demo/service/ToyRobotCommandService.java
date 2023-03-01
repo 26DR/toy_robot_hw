@@ -1,6 +1,6 @@
 package com.toyrobot.demo.service;
 
-import com.toyrobot.demo.model.ToyRobot;
+import com.toyrobot.demo.domain.ToyRobot;
 import com.toyrobot.demo.service.commands.LeftCommand;
 import com.toyrobot.demo.service.commands.MoveCommand;
 import com.toyrobot.demo.service.commands.RightCommand;

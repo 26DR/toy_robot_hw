@@ -1,7 +1,7 @@
 package com.toyrobot.demo.service;
 
+import com.toyrobot.demo.domain.ToyRobot;
 import com.toyrobot.demo.exception.ToyRobotNotFoundException;
-import com.toyrobot.demo.model.ToyRobot;
 import com.toyrobot.demo.repository.ToyRobotRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
